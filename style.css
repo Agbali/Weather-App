@@ -1,0 +1,168 @@
+body{
+    padding: 0;
+    margin: 0 auto;
+}
+
+.house-cont{
+    /* text-align: center; */
+    background-color: rgb(157, 191, 243);
+    max-width: 90%;
+    margin: 1.5rem auto;
+    
+    
+} 
+
+
+.search_inp{
+    width: 40rem;
+    float: right;
+    border: 5px solid #fafaf8;
+    border-radius: 10rem;
+    font-size: 20px;
+    margin: 2rem -2em 7rem 0;
+    max-width: 100%;
+    padding: 1rem; 
+    outline: none;
+    color: yellow;
+    background-color: transparent; 
+} 
+
+.first_box{
+    margin-top: 20rem;
+}
+
+.lagos_f h1{
+    font-size: 100px;
+}
+
+.lagos_f h2{
+    font-size: 50px;
+}
+.myarrow i{
+    margin: 1.5rem 0 -2rem 0;
+}
+.center-container{
+    background-color: #ecf013;
+}
+
+p{
+    font-size: 40px;
+}
+
+.mooncloud{
+    font-size: 10rem;
+    color: yellow;
+}
+.text-center{
+    margin-top: 3rem;
+    
+}
+
+.pb-5{
+    padding-bottom: 5;
+}
+
+.backimg{
+    background-image: url('imagemap.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: black;
+    margin-left: -3em;
+    opacity: 0.4;
+    
+}
+.convert{
+    font-size: 20px;
+}
+.tooltip.tooltiptext{
+    width: 160px;
+    bottom:80%;
+    left:40%;
+    margin-left: 80px;
+
+}
+
+.onlyButt{
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+}
+.removeColor{
+    
+    text-decoration: none;
+}
+.country_pop{
+    height: 600px ;
+}
+.country_pop p{
+    opacity: 1;
+    width: 8rem;
+    font-size: 1.5rem;
+}
+
+.country_pop div{
+    width: 160px;
+    height: 50px;
+    text-align: center;
+    border-radius: 7px;
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.country_pop div i{
+    color: rgb(173, 216, 17);
+}
+.libya{
+    text-transform:uppercase;
+    margin: 5em 10em 0 35em;
+}
+
+.morocco{
+    text-transform:uppercase;
+    margin: 0 2em 0 15em;
+}
+.somali{
+    text-transform:uppercase;
+    margin: -3em 20em 0 55em;
+}
+.chad{
+    text-transform:uppercase;
+    margin: 5em 10em 0 35em;
+}
+.egypt{
+    text-transform:uppercase;
+    margin: 0 2em 0 15em;
+}
+.zambia{
+    text-transform:uppercase;
+    margin: -3em 20em 0 55em;
+}
+.ethiop{
+    text-transform:uppercase;
+    margin: 5em 10em 0 35em;
+}
+.naija{
+    text-transform:uppercase;
+    margin: 0 2em 0 15em;
+}
+.southaf{
+    text-transform:uppercase;
+    padding: 1em;
+    margin: -3em 20em 0 55em;
+    font-size: 1rem;
+}
+.bots{
+    text-transform:uppercase;
+    margin: -5em 2em 0 10em;
+}
+
+.myarrowtwo{
+    margin-left: 70rem;
+    font-size: 40px;
+    color: #ecf013;
+}
