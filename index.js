@@ -60,7 +60,7 @@ function inputKeyUp(event){
     else{
         let h1 = document.querySelector("#lagosHaiD");
         h1.innerHTML = "Lagos";
-        alert("Please type a city and press enter!");
+        
     }
 
  }
