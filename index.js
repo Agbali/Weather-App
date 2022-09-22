@@ -33,7 +33,7 @@ function inputKeyUp(event){
 //     //prevent default prevents the page from loading
            // 
 //     //enter for the Enter key on your keyboard
-    if (event.key == "Enter") {
+    if (event.key === "Enter") {
         let h1 = document.querySelector("#lagosHaiD");
         h1.innerHTML = searchInput.value;
         event.preventDefault();
@@ -55,8 +55,7 @@ function inputKeyUp(event){
           }
 
     }
-    //For some reason this else statement is not working.
-    //This else statement is supposed to load if there was no event listener
+    
     else{
         let h1 = document.querySelector("#lagosHaiD");
         h1.innerHTML = "Lagos";
