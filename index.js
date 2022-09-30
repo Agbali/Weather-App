@@ -43,10 +43,11 @@ function giveTemp(response){
     let iconElement = document.querySelector("#w-icon");
     let winddir = document.querySelector("#windeck");
     let humid = document.querySelector("#humidity");
+    let weathDiscrip = document.querySelector("#weatherDescr")
     //let searchedCountry = document.querySelector(".removeColor");
 
     celsiusTemp = Math.round(response.data.main.temp);
-    //searchedCountry.innerHTML = `${degrees}°`;
+    weathDiscrip.innerHTML = response.data.weather[0].description;
     humid.innerHTML = Math.round(response.data.main.humidity)
     winddir.innerHTML = response.data.wind.speed;
     locationname.innerHTML = `${response.data.name}`;
@@ -76,7 +77,8 @@ function searchLocation(event){
  function changeToFahrenheit(event){
     event.preventDefault();
     let fahrenheitTemperature = (celsiusTemp * 9) / 5 + 32;
-    
+
+    //remove the class inCelsius from the tag and add it to the fahrenheit
     celsiusLink.classList.remove("inCelsius");
     FahrenheitLink.classList.add("inCelsius");
     

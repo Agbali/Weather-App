@@ -109,6 +109,10 @@ body{
     text-decoration: none;
 }
 
+.weatherDescription{
+    font-size: 1rem;
+    margin-left: 0.1rem;
+}
 .onlyButt{
         background-color: #4CAF50; /* Green */
         border: none;
