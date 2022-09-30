@@ -27,41 +27,46 @@
       <div class="container">
         <div class="row align-items-start">
           <div class="row justify-content-between">
-            <div class="col-12">
-              <form id="search-form">
+            <div class="row">
+              <form id="search-form" autocomplete="off">
                 <input
                   class="search_inp"
                   type="text"
                   placeholder="Search Country"
-                  id="searchBox"
-                  onkeypress="inputKeyUp(event)"
+                  id="search-box"
                   autofocus="on"
                 />
+                <input type="submit" value="Search" class="submitBut"/>
               </form>
             </div>
-            <div class="w-100"></div>
             <div class="col-10 lagos_f">
-              <h1 id="lagosHaiD" class="lagosName"></h1>
-              <h2 id="temp"> 
-                <a href="#" class="removeColor" id="symbol"></a> 
-                <a href="#" class="removeColor" id="converter" title="convert to Fanrenheit" class="convert">C</a>
+              <h1 id="lagosHaiD" class="countryName"></h1>
+              <h2 id="temp">
+                <span class="removeColor" id="symbol"></span>
+                <span class="removeColor" title="convert to Fanrenheit"> <a href="" class="inCelsius" id="Celsius-link">C</a> </span>|
+                <span> <a href="" class="inFahrenheit" id="Fahrenheit-link">F</a></span>
               </h2>
-              <!-- <a href="#" id="symbol"></a> -->
+              <p class="windSpeed">
+                Wind:
+                <span id="windeck"></span>
+                <strong>km/h</strong>, Humidity:
+                <span id="humidity"></span>
+                <strong>%</strong>
+              </p>
+
               <h3 id="theDate"></h3>
               <button class="onlyButt">Location</button>
             </div>
             <div class="col-2 fs-1">
-              <i class="fa-solid fa-cloud-moon mooncloud"></i>
-              <div class="row myarrow">
-                <i
-                  class="fa-solid fa-circle-chevron-right animate__animated animate__shakeX animate__delay-2s animate__repeat-3"
-                ></i>
+              <img src="" alt="icon" id="w-icon" class="source"/>
+              <div class="row">
+                <p class="weatherDescr"><span></span></p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="center-container">
+      <div class="center-container iconix">
         <div class="container overflow-hidden text-center">
           <div class="row row-cols-7">
             <div class="col">
@@ -71,14 +76,9 @@
 
               <div class="row pb-5"></div>
 
-              <div class="row pb-5"></div>
-
               <div class="row pb-5">
                 <p>24°</p>
               </div>
-
-              <div class="row pb-5"></div>
-
               <div class="row pb-5"></div>
 
               <div class="row">
@@ -91,17 +91,14 @@
               </div>
               <div class="row pb-5"></div>
 
-              <div class="row pb-5"></div>
-
               <div class="row pb-5">
                 <p>23°</p>
               </div>
-              <div class="row pb-5"></div>
 
               <div class="row pb-5"></div>
 
               <div class="row">
-                <p>Mon</p>
+                <p>Tue</p>
               </div>
             </div>
             <div class="col border">
@@ -110,17 +107,13 @@
               </div>
               <div class="row pb-5"></div>
 
-              <div class="row pb-5"></div>
-
               <div class="row pb-5">
-                <p>24°</p>
+                <p>20°</p>
               </div>
               <div class="row pb-5"></div>
 
-              <div class="row pb-5"></div>
-
               <div class="row">
-                <p>Mon</p>
+                <p>Wed</p>
               </div>
             </div>
             <div class="col border">
@@ -129,17 +122,13 @@
               </div>
               <div class="row pb-5"></div>
 
-              <div class="row pb-5"></div>
-
               <div class="row pb-5">
-                <p>24°</p>
+                <p>21°</p>
               </div>
               <div class="row pb-5"></div>
 
-              <div class="row pb-5"></div>
-
               <div class="row">
-                <p>Mon</p>
+                <p>Thur</p>
               </div>
             </div>
             <div class="col border">
@@ -148,17 +137,13 @@
               </div>
               <div class="row pb-5"></div>
 
-              <div class="row pb-5"></div>
-
               <div class="row pb-5">
-                <p>24°</p>
+                <p>25°</p>
               </div>
               <div class="row pb-5"></div>
 
-              <div class="row pb-5"></div>
-
               <div class="row">
-                <p>Mon</p>
+                <p>Fri</p>
               </div>
             </div>
             <div class="col border">
@@ -167,17 +152,13 @@
               </div>
               <div class="row pb-5"></div>
 
-              <div class="row pb-5"></div>
-
               <div class="row pb-5">
-                <p>23°</p>
+                <p>20°</p>
               </div>
               <div class="row pb-5"></div>
 
-              <div class="row pb-5"></div>
-
               <div class="row">
-                <p>Mon</p>
+                <p>Sat</p>
               </div>
             </div>
             <div class="col">
@@ -186,17 +167,13 @@
               </div>
               <div class="row pb-5"></div>
 
-              <div class="row pb-5"></div>
-
               <div class="row pb-5">
-                <p>24°</p>
+                <p>22°</p>
               </div>
               <div class="row pb-5"></div>
 
-              <div class="row pb-5"></div>
-
               <div class="row">
-                <p>Mon</p>
+                <p>Sun</p>
               </div>
             </div>
           </div>
@@ -250,7 +227,11 @@
         ></i>
       </div>
     </div>
-    <footer class="github"><a href="http://github.com/Agbali/Weather-App">My Weather App Github Repository</a></footer>
+    <footer class="github">
+      <a href="http://github.com/Agbali/Weather-App"
+        >My Weather App Github Repository</a
+      >
+    </footer>
     <script src="index.js"></script>
   </body>
 </html>

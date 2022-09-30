@@ -7,36 +7,47 @@ body{
     /* text-align: center; */
     background-color: rgb(157, 191, 243);
     max-width: 90%;
-    margin: 1.5rem auto;
-    
-    
+    margin: 1.5rem auto;    
 } 
 
 
 .search_inp{
-    width: 40rem;
-    float: right;
-    border: 5px solid #fafaf8;
-    border-radius: 10rem;
+    width: 20rem;
+    border: 3px solid #fafaf8;
+    border-radius: 4rem 0 0 4rem;
     font-size: 20px;
-    margin: 2rem -2em 7rem 0;
-    max-width: 100%;
-    padding: 1rem; 
+    margin: 2rem -0.3rem 2rem 0;
+    padding: 10px; 
     outline: none;
-    color: yellow;
     background-color: transparent; 
 } 
-
+.submitBut{
+    padding: 13px;
+    width: 10rem;
+    font-size: 20px;
+    border: none;
+    margin-top: 2rem;
+    margin-bottom: -1.24rem;
+}
 .first_box{
     margin-top: 20rem;
 }
 
 .lagos_f h1{
-    font-size: 100px;
+    font-size: 70px;
+}
+
+.lagos_f p{
+    font-size: 15px;
 }
 
 .lagos_f h2{
-    font-size: 50px;
+    font-size: 30px;
+}
+
+.lagos_f h3{
+    font-size: 15px;
+    margin-top: -1rem;
 }
 .myarrow i{
     margin: 1.5rem 0 -2rem 0;
@@ -45,8 +56,8 @@ body{
     background-color: #ecf013;
 }
 
-p{
-    font-size: 40px;
+.iconix p{
+    font-size: 20px;
 }
 
 .mooncloud{
@@ -72,8 +83,10 @@ p{
     opacity: 0.4;
     
 }
-.convert{
-    font-size: 20px;
+.countryName span{
+    font-size: 10px;
+    position: relative;
+    top: -50px;
 }
 .tooltip.tooltiptext{
     width: 160px;
@@ -81,6 +94,19 @@ p{
     left:40%;
     margin-left: 80px;
 
+}
+
+.inFahrenheit{
+    text-decoration: none;
+}
+.inCelsius{
+    text-decoration: none;
+    cursor: default;
+    color: black;
+}
+
+.inCelsius:hover{
+    text-decoration: none;
 }
 
 .onlyButt{
@@ -94,7 +120,6 @@ p{
         font-size: 16px;
 }
 .removeColor{
-    
     text-decoration: none;
 }
 .country_pop{
