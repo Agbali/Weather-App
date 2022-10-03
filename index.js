@@ -26,6 +26,33 @@ function myDates (){
 
 myDates();
 
+function weatherForecast(){
+
+    let forecastElement = document.querySelector("#forecasting");
+
+    let forecastHTML = `<div class="row">`;
+    let days = ["Thur", "Fri", "Sat", "Sun"];
+    days.forEach(function (day){
+        forecastHTML = 
+            forecastHTML + 
+            `
+            <div class="col-2 content">
+                <div class="row">
+                   ${day}
+                </div>
+                <div class="row fa-solid fa-cloud-showers-heavy">
+                </div>
+                <div class="row">
+                    24°
+                </div>      
+            </div>
+            `;
+    });
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+}
+
+weatherForecast();
 //create a function that will change the h1 country to the country the user will search for
 //Then the temperature of that country is called
 
