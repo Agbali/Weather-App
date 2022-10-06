@@ -26,43 +26,66 @@ function myDates (){
 
 myDates();
 
-function weatherForecast(){
+function formatDay(timestamp){
+    let date = new Date(timestamp * 1000);
+    let day = date.getDay();
 
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+    return days[day];
+}
+
+function displayForecast(coordinates){
+    console.log(coordinates);
+
+    let apiKey = "93d43dfe3b4a950e5b187e5dc313705e";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lat}&exclude=hourly,&appid=${apiKey}&units=metric`;
+    
+    axios.get(apiUrl).then(weatherForecast);
+}
+
+function weatherForecast(response){
+
+    let forecast = response.data.daily;
     let forecastElement = document.querySelector("#forecasting");
 
     let forecastHTML = `<div class="row">`;
-    let days = ["Thur", "Fri", "Sat", "Sun"];
-    days.forEach(function (day){
+    forecast.forEach(function (forecastDay, index){
+    if(index < 6){
         forecastHTML = 
             forecastHTML + 
             `
             <div class="col-2 content">
                 <div class="row">
-                   ${day}
+                   ${formatDay(forecastDay.dt)}
                 </div>
-                <div class="row fa-solid fa-cloud-showers-heavy">
-                </div>
+                <img
+                    src="http://openweathermap.org/img/wn/${
+                    forecastDay.weather[0].icon
+                    }@2x.png"
+                    alt=""
+                    width="82"
+                    class="row"
+                </>
                 <div class="row">
-                    24°
+                    ${Math.round(forecastDay.temp.max)}°
                 </div>      
             </div>
-            `;
+        `;
+    }
+        
     });
     forecastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML;
 }
 
-weatherForecast();
 //create a function that will change the h1 country to the country the user will search for
 //Then the temperature of that country is called
 
 //ANother function to be called when the user wants to get the temperature for his/her current location
 //Same function but this time the navigator geolocation function is called
 function giveTemp(response){
-    //receives response from the weather API 
-    console.log(response.data.weather[0].description);
-    console.log(response.data.main);
-    
+    //receives response from the weather API     
     let degrees = Math.round(response.data.main.temp);
     //let roundOff = Math.round(response.data.main.temp);
     let h2 = document.querySelector("#symbol");
@@ -83,6 +106,8 @@ function giveTemp(response){
         "src", 
         `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
         );
+
+    displayForecast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -98,65 +123,19 @@ function searchLocation(event){
     //enter for the Enter key on your keyboard
     let countryInput = document.querySelector("#search-box");
     searchCity(countryInput.value);    
-        // calls the loadTemp function with this value passed into it
- }
+        // calls the searchCity function with this value passed into it
 
- function changeToFahrenheit(event){
-    event.preventDefault();
-    let fahrenheitTemperature = (celsiusTemp * 9) / 5 + 32;
-
-    //remove the class inCelsius from the tag and add it to the fahrenheit
-    celsiusLink.classList.remove("inCelsius");
-    FahrenheitLink.classList.add("inCelsius");
+    let libyaInfo = document.querySelector("#libyarr");
+    searchCity(libyaInfo.value);
     
-    
-    let temperatureElement = document.querySelector("#symbol");
-    temperatureElement.innerHTML = `${Math.round(fahrenheitTemperature)}°`;
-    //alert(fahrenheitTemperature);
  }
 
- function changeBackCelcius(event){
-    event.preventDefault();
-
-    celsiusLink.classList.add("inCelsius");
-    FahrenheitLink.classList.remove("inCelsius");
-
-    let celsiusDegree = document.querySelector("#symbol");
-    celsiusDegree.innerHTML = `${celsiusTemp}°`;
-
- }
-
- let celsiusTemp = null;
+let celsiusTemp = null;
 //This selects the form itself as a document
 let form = document.querySelector("#search-form");
 //Add event listener to help you choose what you want your program to do
 form.addEventListener("submit", searchLocation); 
 
-let celsiusLink = document.querySelector("#Celsius-link");
-celsiusLink.addEventListener("click", changeBackCelcius);
-
-let FahrenheitLink = document.querySelector("#Fahrenheit-link");
-FahrenheitLink.addEventListener("click", changeToFahrenheit);
 
 searchCity("Lagos");
 
-
-
-
-// function tempButton(position){
-//     //This data of longitude and latitude is provided by the geolocation navigator and is
-//     //passed to the API as strings.
-//     let apiKey = "76a578de3ab86388efb5bf00ea5c9bf1";
-//     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
-
-//     //axios helps to use the API then calls the giveTemp function above
-//     axios.get(apiUrl).then(giveTemp);
-// }
-// //navigator function is nested in this function
-// function temperateRedir(){
-//     navigator.geolocation.getCurrentPosition(tempButton);
-// }
-
-// //listens to the button html element
-// let buttonClick = document.querySelector("button");
-// buttonClick.addEventListener("click", temperateRedir);
